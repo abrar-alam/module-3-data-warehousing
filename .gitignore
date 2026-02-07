@@ -208,3 +208,5 @@ __marimo__/
 
 *.parquet
 
+# Google Cloud service account keys
+gcs.json
