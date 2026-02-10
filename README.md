@@ -1,5 +1,17 @@
-# module-3-data-warehousing
+# Data Warehousing using GCP BigQuery
 
+## Objective
+
+
+The goal of this project was to demonstrate the performance of **GCP BigQuery** for **Data Warehousing** using **External** and **Materialized** tables leveraging **Partitioning** and **Clustering**. **Google Cloud Storage (GCS)** bucket have been used as the source of the **External Tables**. 
+
+## Dataset
+The dataset used in this project can be found [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+## Functionality
+***Extract and Load***: The data is first extracted from the link shown in the **Dataset** section, and then loaded onto a **GCS bucket** using the Python script **load_yellow_taxi_data.py** .
+
+***Analytics***: TBC
 
 # Creating External table:
 CREATE OR REPLACE EXTERNAL TABLE `udemy-compute-engine-abrar.nyc_taxi.external_yellow_tripdata_2024`
