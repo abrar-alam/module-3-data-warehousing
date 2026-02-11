@@ -17,7 +17,7 @@ client = storage.Client.from_service_account_json(CREDENTIALS_FILE)
 # client = storage.Client(project='zoomcamp-mod3-datawarehouse')
 
 
-BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-"
+BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-"
 MONTHS = [f"{i:02d}" for i in range(1, 13)]
 DOWNLOAD_DIR = "."
 
@@ -30,7 +30,7 @@ bucket = client.bucket(BUCKET_NAME)
 
 def download_file(month):
     url = f"{BASE_URL}{month}.parquet"
-    file_path = os.path.join(DOWNLOAD_DIR, f"yellow_tripdata_2019-{month}.parquet")
+    file_path = os.path.join(DOWNLOAD_DIR, f"green_tripdata_2020-{month}.parquet")
 
     try:
         print(f"Downloading {url}...")
