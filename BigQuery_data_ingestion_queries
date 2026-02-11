@@ -1,0 +1,15 @@
+CREATE OR REPLACE EXTERNAL TABLE `udemy-compute-engine-abrar.nytaxi.external_yellow_tripdata_2019_2020`
+OPTIONS (
+  format = 'PARQUET',
+  uris = ['gs://abrar-alam-dezoomcamp-hw3-2026/yellow_tripdata_2019-*.parquet', 'gs://abrar-alam-dezoomcamp-hw3-2026/yellow_tripdata_2020-*.parquet']
+);
+
+CREATE OR REPLACE EXTERNAL TABLE `udemy-compute-engine-abrar.nytaxi.external_green_tripdata_2019_2020`
+OPTIONS (
+  format = 'PARQUET',
+  uris = ['gs://abrar-alam-dezoomcamp-hw3-2026/green_tripdata_2019-*.parquet', 'gs://abrar-alam-dezoomcamp-hw3-2026/green_tripdata_2020-*.parquet']
+);
+
+-- The follwing gave error: "Error while reading table: udemy-compute-engine-abrar.nytaxi.external_green_tripdata_2019_2020, error message: Parquet column 'ehail_fee' has type DOUBLE which does not match the target cpp_type INT64. File: gs://abrar-alam-dezoomcamp-hw3-2026/green_tripdata_2019-04.parquet"
+CREATE OR REPLACE TABLE `udemy-compute-engine-abrar.nytaxi.green_tripdata` AS
+SELECT * FROM `udemy-compute-engine-abrar.nytaxi.external_green_tripdata_2019_2020`;
